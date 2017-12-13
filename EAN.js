@@ -45,7 +45,6 @@ const EAN = function(){
         }
 
     function check(){
-        //create this function
         let code = sysCode+manCode+proCode;
         let sum = 0;
         for(let c=0;c<12;c++){
