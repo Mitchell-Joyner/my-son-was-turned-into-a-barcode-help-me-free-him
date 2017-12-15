@@ -2,7 +2,7 @@ const Random = require('./Random.js');
 
 const ISBN = function(){
 
-    let code = Random().digit(9);
+    let code = String(Random().digit(9));
     let checkDigit = check();
 
     function check(){
@@ -14,7 +14,7 @@ const ISBN = function(){
         if(remainder == 0){
             return "0";
         }
-        if(remainder ==1){
+        if(remainder == 1){
             return "X";
         }
         return 11-remainder;

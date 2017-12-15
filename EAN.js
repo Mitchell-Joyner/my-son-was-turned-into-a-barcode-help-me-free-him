@@ -2,14 +2,14 @@ const Random = require('./Random.js');
 
 const EAN = function(){
 
-    let sysCode;//3 digits
-    let manCode;//5 digits
-    let proCode;//4 digits
+    let sysCode = makeSysCode();//3 digits
+    let manCode = makeManCode();// 5 digits
+    let proCode = makeProCode();// 4 digits
     let checkDigit = check();
 
 
     function makeSysCode(){
-      let r = discreteRangeIn(1,8);
+      let r = Random().discreteRangeIn(1,8);
           if (r = 1){
               return "001";//'Merica
           }
@@ -37,11 +37,11 @@ const EAN = function(){
         }
 
         function makeManCode(){
-          return Random().digit(5);
+          return String(Random().digit(5));
         }
 
         function makeProCode(){
-          return Random().digit(4);
+          return String(Random().digit(4));
         }
 
     function check(){
